@@ -1,0 +1,8 @@
+DirectorySlash Off
+RewriteEngine On
+
+RewriteRule ^projects/(.+)/(.+)/modal.php$ /modal.php?category=$1&project=$2 [END,PT,QSA]
+RewriteRule ^(projects)/(\w+)$ /index.php?page=$1&category=$2 [END,PT,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ /index.php?page=$1 [END,PT,QSA]
